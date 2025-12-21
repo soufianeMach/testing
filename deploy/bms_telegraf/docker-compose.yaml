@@ -1,0 +1,14 @@
+version: '3.7'
+services:
+  Wago-CAA-Runtime:
+    image: geekychebbi/cc100-codesys:latest
+    container_name: "050---wago-caa3-cc-FW27"
+    command: "--init"
+    network_mode: host
+    privileged: true
+    volumes:
+      - /var/run/dbus/system_bus_socket:/var/run/dbus/system_bus_socket
+      - /tmp:/tmp
+      - /drm:/drm
+      - ./configs/${PORTAINER_EDGE_ID}:/home/codesys_root/PlcLogic/Application
+    restart: always
