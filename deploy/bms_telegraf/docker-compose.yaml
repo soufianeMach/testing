@@ -1,6 +1,8 @@
 version: '3.7'
 services:
   Wago-CAA-Runtime:
+    env_file:
+      - ./${PORTAINER_EDGE_ID}/stack.env
     image: geekychebbi/cc100-codesys:latest
     container_name: "050---wago-caa3-cc-FW27"
     command: "--init"
