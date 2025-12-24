@@ -3,7 +3,7 @@ services:
     image: alpine:3.20
     container_name: portainer_context_env_mount_test
     env_file:
-      - ./${PORTAINER_EDGE_ID}/test.env
+      - ./${PORTAINER_EDGE_ID}/stack.env
     command: ["sh", "-c", "echo \"$TEST_MESSAGE\" && cat /data/message.txt && sleep 300"]
     volumes:
       - ./${PORTAINER_EDGE_ID}:/data:ro
